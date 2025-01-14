@@ -65,6 +65,7 @@ main {
     flex: 1;
 }
 
+/* Descripción */
 #Descripción {
     background-color: #282828;
     padding: 2rem;
@@ -213,78 +214,3 @@ footer a:hover {
         padding: 1rem;
     }
 }
-/* Sección de productos */
-#productos {
-    text-align: center;
-    padding: 2rem;
-    background-color: #1e1e1e;
-    color: #eaeaea;
-}
-
-#productos h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #f5c518;
-}
-
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-}
-
-.producto {
-    background-color: #282828;
-    border-radius: 10px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    max-width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-}
-
-.producto img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
-.producto h3 {
-    font-size: 1.5rem;
-    color: #f5c518;
-    margin-bottom: 0.5rem;
-}
-
-.producto p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-.precio {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #eaeaea;
-}
-
-.btn-agregar {
-    background-color: #f5c518;
-    color: #1e1e1e;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-agregar:hover {
-    background-color: #e0ac08;
-}
-
