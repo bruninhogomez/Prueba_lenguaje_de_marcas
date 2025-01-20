@@ -65,21 +65,31 @@ main {
     flex: 1;
 }
 
-/* Descripción */
-#Descripción {
-    background-color: #282828;
+.descripcion {
+    background-color: #2e2e2e; /* Fondo elegante */
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    flex: 1 1 300px;
-    max-width: 500px;
+    color: #d4d4d4; /* Color de texto suave */
+    font-family: 'Georgia', serif; /* Fuente elegante */
+    line-height: 1.8;
     text-align: justify;
-    color: #d4d4d4;
+    max-width: 100%; /* Garantiza que ocupe el espacio disponible */
+    width: 100%; /* Asegura que el ancho se adapte */
+    margin: 2rem auto;
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho */
 }
 
-#Descripción p {
-    margin: 0;
-    line-height: 1.8;
+.descripcion p {
+    margin: 0 0 1rem;
+}
+
+.descripcion h3 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #f5c518;
+    margin-bottom: 1rem;
 }
 
 /* Sección de login */
@@ -214,3 +224,359 @@ footer a:hover {
         padding: 1rem;
     }
 }
+/* Botón de "Me gusta" */
+.btn-like {
+    background-color: #282828;
+    color: #f5c518;
+    border: 2px solid #f5c518;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.btn-like:hover {
+    background-color: #f5c518;
+    color: #1e1e1e;
+    transform: scale(1.1);
+}
+
+.btn-like:active {
+    background-color: #e0ac08;
+    transform: scale(0.95);
+}
+
+/* Añadir animación al texto del botón */
+@keyframes heart-pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-like.clicked {
+    animation: heart-pop 0.3s ease;
+    color: #e84545;
+    border-color: #e84545;
+}
+
+
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #212529;
+        --color-text: #f8f9fa;
+    }
+}
+/* Estilo para secciones */
+section {
+    margin-bottom: 2rem;
+  ;
+    padding: 1.5rem;
+    border: 1px solid ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid ;
+    display: inline-block;
+}
+
+section p {
+    margin-bottom: 1rem;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid ;
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 0 0.5rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        margin: 1rem auto;
+    }
+}
+/* Estilos generales */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #eaeaea;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color: #212121;
+    color: #f5c518; /* Dorado elegante */
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid #f5c518;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #1e1e1e;
+    background-color: #f5c518;
+    border-color: #f5c518;
+}
+
+/* Sección principal */
+main {
+    padding: 2rem;
+    flex: 1;
+}
+
+/* Productos */
+#productos {
+    text-align: center;
+    color: #f5c518;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.producto {
+    background-color: #2e2e2e; /* Fondo elegante */
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #eaeaea;
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.producto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.producto p {
+    margin-bottom: 1rem;
+}
+
+.producto .precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f5c518;
+    margin-bottom: 1rem;
+}
+
+.producto button {
+    background-color: #f5c518;
+    color: #1e1e1e;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin: 0.2rem;
+}
+
+.producto button:hover {
+    background-color: #e0ac08;
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: #f5c518;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Links en el footer */
+footer a {
+    color: #f5c518;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: #e0ac08;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .producto {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        padding: 0.5rem;
+    }
+
+    .producto {
+        flex: 1 1 100%;
+        padding: 1rem;
+    }
+}
+/* Botón de "Me gusta" */
+.btn-like {
+    background-color: #282828;
+    color: #f5c518;
+    border: 2px solid #f5c518;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.btn-like:hover {
+    background-color: #f5c518;
+    color: #1e1e1e;
+    transform: scale(1.1);
+}
+
+.btn-like:active {
+    background-color: #e0ac08;
+    transform: scale(0.95);
+}
+
+/* Añadir animación al texto del botón */
+@keyframes heart-pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
