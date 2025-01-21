@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CESTA</title>
+    <link rel="stylesheet" href="CSS/estilo_de_pagina.css">
 </head>
 <body>
+<header>
+    <a href="index.html">
+        <img src="proyecto 2/imagenes/logo Pagina.webp" alt="Logo del sitio" class="logo">
+    </a>
+    <h1>CESTA</h1>
+</header>
+
+<main>
+    <section class="cesta">
+        <article class="producto">
+            <img src="proyecto 2/imagenes/sarten.jpeg" alt="Sartén antiadherente">
+            <h3>Sartén Antiadherente</h3>
+            <p>Perfecta para tus recetas. Diámetro: 24 cm.</p>
+            <p class="precio">15,99 €</p>
+            <button class="btn-agregar">Añadir a la Cesta</button>
+            <button class="btn-like">❤ Me gusta</button>
+        </article>
+        <article class="producto">
+            <img src="proyecto 2/imagenes/batidora.jpeg" alt="Batidora de mano">
+            <h3>Batidora de Mano</h3>
+            <p>Potencia de 600W para preparar salsas y cremas.</p>
+            <p class="precio">29,99 €</p>
+            <button class="btn-agregar">Añadir a la Cesta</button>
+            <button class="btn-like">❤ Me gusta</button>
+        </article>
+        <article class="producto">
+            <img src="proyecto 2/imagenes/reloj.jpeg" alt="Reloj de cocina">
+            <h3>Reloj de Cocina</h3>
+            <p>Con temporizador para recetas precisas.</p>
+            <p class="precio">12,99 €</p>
+        </section>
+
+    <section class="pago">
+        <h2>Proceder al Pago</h2>
+        <form action="procesar_pago.html" method="post">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="tarjeta">Número de tarjeta:</label>
+            <input type="text" id="tarjeta" name="tarjeta" required>
+
+            <button type="submit" class="btn-pagar">Pagar</button>
+        </form>
+    </section>
+</main>
 
 </body>
 </html>
