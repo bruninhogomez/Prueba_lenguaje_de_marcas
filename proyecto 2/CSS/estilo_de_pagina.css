@@ -1,4 +1,3 @@
-/* Estilos generales */
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -11,6 +10,7 @@ body {
     min-height: 100vh;
 }
 
+
 /* Encabezado */
 header {
     background-color: #212121;
@@ -19,7 +19,6 @@ header {
     text-align: center;
     border-bottom: 3px solid #f5c518;
 }
-
 header h1 {
     margin: 0;
     font-size: 2.5rem;
@@ -27,6 +26,10 @@ header h1 {
     letter-spacing: 2px;
 }
 
+header .logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantén la proporción del logo */
+}
 /* Navegación */
 nav ul {
     list-style: none;
@@ -37,7 +40,6 @@ nav ul {
     gap: 2rem;
     flex-wrap: wrap;
 }
-
 nav ul li a {
     color: #eaeaea;
     text-decoration: none;
@@ -49,11 +51,13 @@ nav ul li a {
     font-size: 1rem;
 }
 
+
 nav ul li a:hover {
     color: #1e1e1e;
     background-color: #f5c518;
     border-color: #f5c518;
 }
+
 
 /* Sección principal */
 main {
@@ -64,6 +68,7 @@ main {
     justify-content: center;
     flex: 1;
 }
+
 
 .descripcion {
     background-color: #2e2e2e; /* Fondo elegante */
@@ -84,53 +89,76 @@ main {
     margin: 0 0 1rem;
 }
 
-.descripcion h3 {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #f5c518;
-    margin-bottom: 1rem;
-}
 
-/* Sección de login */
-#login {
-    background-color: #1e1e1e;
-    border: 1px solid #f5c518;
+
+
+
+
+
+
+/* Bloque: login-caja */
+.login-caja {
+    background-color:rgba(65,70,70,0.7);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    flex: 1 1 300px;
+    border-radius: 10px;
     max-width: 400px;
-    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height:700px;
 }
 
-.login-caja h2 {
+.login-caja:hover {
+    transform: scale(1.02);
+}
+
+/* Contenedor para centrar y dar espaciado al contenido */
+.login-caja__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Elemento: login-caja__titulo */
+.login-caja__titulo {
     color: #f5c518;
     margin-bottom: 1.5rem;
     font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 2rem;
+    transition: color 0.3s ease-in-out;
 }
 
-form {
+.login-caja__titulo:hover {
+    color: #e0ac08;
+}
+
+/* Elemento: login-caja__formulario */
+.login-caja__formulario {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.form-group {
+/* Elemento: login-caja__grupo */
+.login-caja__grupo {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
-label {
+/* Elemento: login-caja__label */
+.login-caja__label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #f5c518;
+    transition: color 0.3s ease-in-out;
 }
-
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="date"] {
+.login-caja__label:hover {
+    color: #e0ac08;
+}
+/* Elemento: login-caja__input */
+.login-caja__input {
     padding: 0.8rem;
     border: 1px solid #333;
     border-radius: 5px;
@@ -138,17 +166,18 @@ input[type="date"] {
     color: #eaeaea;
     font-size: 1rem;
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="tel"]:focus,
-input[type="date"]:focus {
+.login-caja__input:hover {
     border-color: #f5c518;
+    transform: scale(1.05);
 }
-
-input[type="submit"] {
+.login-caja__input:focus {
+    border-color: #f5c518;
+    transform: scale(1.05);
+}
+/* Elemento: login-caja__submit */
+.login-caja__submit {
     background-color: #f5c518;
     color: #1e1e1e;
     border: none;
@@ -156,462 +185,369 @@ input[type="submit"] {
     border-radius: 25px;
     cursor: pointer;
     font-size: 1.2rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     font-weight: bold;
 }
-
-input[type="submit"]:hover {
+.login-caja__submit:hover {
     background-color: #e0ac08;
+    transform: scale(1.05);
 }
-
-/* Footer */
-footer {
-    background-color: #212121;
-    color: #f5c518;
-    text-align: center;
-    padding: 1rem;
+/* Elemento: login-caja__small */
+.login-caja__small {
+    color: #cccccc;
     font-size: 0.9rem;
-    margin-top: auto;
+    transition: color 0.3s ease-in-out;
 }
-
-/* Links en el footer */
-footer a {
+.login-caja__small:hover {
     color: #f5c518;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-footer a:hover {
-    color: #e0ac08;
-}
-
-/* Diseño responsive */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    #Descripción, #login {
-        flex: 1 1 90%;
-        padding: 1.5rem;
-    }
-
-    #login {
-        margin: 0 auto;
-    }
-
-    #Descripción {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul li a {
-        padding: 0.5rem;
-    }
-
-    #Descripción, #login {
-        flex: 1 1 100%;
-        padding: 1rem;
-    }
-}
-/* Botón de "Me gusta" */
-.btn-like {
-    background-color: #282828;
-    color: #f5c518;
-    border: 2px solid #f5c518;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    display: inline-block;
-}
-
-.btn-like:hover {
-    background-color: #f5c518;
-    color: #1e1e1e;
-    transform: scale(1.1);
-}
-
-.btn-like:active {
-    background-color: #e0ac08;
-    transform: scale(0.95);
-}
-
-/* Añadir animación al texto del botón */
-@keyframes heart-pop {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.btn-like.clicked {
-    animation: heart-pop 0.3s ease;
-    color: #e84545;
-    border-color: #e84545;
 }
 
 
 
-/* Modo oscuro */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-bg: #212529;
-        --color-text: #f8f9fa;
-    }
-}
-/* Estilo para secciones */
-section {
-    margin-bottom: 2rem;
-  ;
-    padding: 1.5rem;
-    border: 1px solid ;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid ;
-    display: inline-block;
-}
-
-section p {
-    margin-bottom: 1rem;
-}
 
 
-a:hover {
-    text-decoration: underline;
-}
 
-/* Estilo para formularios */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-label {
-    font-weight: bold;
-}
-
-input, textarea, button {
-    font-size: 1rem;
-    padding: 0.5rem;
-    border: 1px solid ;
-    border-radius: 5px;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-button {
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 0 0.5rem;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    main {
-        margin: 1rem auto;
-    }
-}
-/* Estilos generales */
-body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #eaeaea;
-    background-color: #1e1e1e;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Encabezado */
-header {
-    background-color: #212121;
-    color: #f5c518; /* Dorado elegante */
-    padding: 2rem 1rem;
-    text-align: center;
-    border-bottom: 3px solid #f5c518;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 2px;
-}
-
-/* Navegación */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    color: #eaeaea;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1.5rem;
-    border: 2px solid transparent;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-nav ul li a:hover {
-    color: #1e1e1e;
-    background-color: #f5c518;
-    border-color: #f5c518;
-}
-
-/* Sección principal */
-main {
+/* Bloque: imagen-destacada */
+.imagen-destacada {
+    background-color:rgba(65,70,70,0.7) ;
     padding: 2rem;
-    flex: 1;
-}
-.productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 5rem 0;
-}
-
-.producto {
-    background-color: #2e2e2e; /* Fondo elegante */
-    padding: 0rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    color: #eaeaea;
-}
-
-.producto img {
-    max-width: 100%;
-    height: auto;
     border-radius: 10px;
-    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.producto h3 {
-    font-size: 1.5rem;
+/* Elemento: h2 dentro de imagen-destacada */
+.imagen-destacada h2 {
+    color: #e0ac08;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Elemento: p dentro de imagen-destacada */
+.imagen-destacada p {
+    font-size: 1.1em;
+    color: #fff;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Bloque: producto-destacado */
+.producto-destacado {
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Elemento: img dentro de producto-destacado */
+.producto-destacado img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.producto-destacado img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Elemento: h3 dentro de producto-destacado */
+.producto-destacado h3 {
+    margin-top: 1rem;
+    color:  #f5c518;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Elemento: p dentro de producto-destacado */
+.producto-destacado p {
+    color: #666;
     margin-bottom: 0.5rem;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.producto p {
-    margin-bottom: 1rem;
-}
-
-.producto .precio {
-    font-size: 1.2rem;
+/* Elemento: .precio dentro de producto-destacado */
+.precio {
+    color: #f5c518 ;
     font-weight: bold;
-    color: #f5c518;
     margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.producto button {
-    background-color: #f5c518;
+/* Bloque: botones */
+/* Bloque: btn-agregar */
+.btn-agregar {
+    background-color: #FFD700; /* Color dorado */
     color: #1e1e1e;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-weight: bold;
-    margin: 0.2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+.btn-agregar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 215, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+}
 
+.btn-agregar:hover::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
 
-.producto button:hover {
+.btn-agregar:hover {
     background-color: #e0ac08;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Footer */
-footer {
-    background-color: #212121;
-    color: #f5c518;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    margin-top: auto;
-}
-
-/* Links en el footer */
-footer a {
-    color: #f5c518;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-footer a:hover {
-    color: #e0ac08;
-}
-
-/* Diseño responsive */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul li a {
-        padding: 0.5rem;
-    }
-}
-/* Botón de "Me gusta" */
+/* Bloque: btn-like */
 .btn-like {
-    background-color: #282828;
-    color: #f5c518;
-    border: 2px solid #f5c518;
-    padding: 0.5rem 1rem;
+    background-color: #FFD700; /* Color dorado */
+    color: #1e1e1e;
+    border: none;
+    padding: 0.8rem 1.2rem;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-weight: bold;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-like::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 215, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+}
+
+.btn-like:hover::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
 
 .btn-like:hover {
-    background-color: #f5c518;
-    color: #1e1e1e;
-    transform: scale(1.1);
-}
-
-.btn-like:active {
     background-color: #e0ac08;
-    transform: scale(0.95);
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
-
-/* Añadir animación al texto del botón */
-@keyframes heart-pop {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.btn-ver-receta{
-    background-color: #282828;
-    color: #f5c518;
-    border: 2px solid #f5c518;
-    padding: 0.5rem 1rem;
+/* Bloque: btn-ver-receta */
+.btn-ver-receta {
+    background-color: #FFD700; /* Color dorado */
+    color: #1e1e1e;
+    border: none;
+    padding: 0.8rem 1.2rem;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-weight: bold;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-ver-receta::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 215, 0, 0.2);
+    transition: transform 0.5s ease-in-out;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+}
+
+.btn-ver-receta:hover::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
 }
 
 .btn-ver-receta:hover {
-    background-color: #f5c518;
-    color: #1e1e1e;
-    transform: scale(1.1);
-}
-
-.btn-ver-receta:active {
     background-color: #e0ac08;
-    transform: scale(0.95);
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
-.caja-receta {
-    background-color: #2e2e2e; /* Fondo elegante */
-    padding: 0rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+
+
+/* Bloque: main-container */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* Bloque: productos */
+#productos {
+    background-color: #fff8e1;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#productos:hover {
+    transform: scale(1.02);
+}
+
+/* Bloque: accesorios */
+#accesorios {
+    background-color: #e0f7fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#accesorios:hover {
+    transform: scale(1.02);
+}
+
+/* Bloque: ofertas */
+#ofertas {
+    background-color: #ffe0b2;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#ofertas:hover {
+    transform: scale(1.02);
+}
+
+/* Elemento: h2 dentro de cada sección */
+#productos h2,
+#accesorios h2,
+#ofertas h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
     text-align: center;
-    color: #eaeaea;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
 }
 
-.caja-receta button {
-    background-color: #f5c518;
-    color: #1e1e1e;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+/* Elemento: productos__producto y accesorio__producto */
+.productos__producto,
+.accesorio__producto,
+.ofertas__producto {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.productos__producto:hover,
+.accesorio__producto:hover,
+.ofertas__producto:hover {
+    transform: scale(1.05);
+}
+
+/* Elemento: img dentro de cada producto */
+.productos__producto img,
+.accesorio__producto img,
+.ofertas__producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Elemento: h3 dentro de cada producto */
+.productos__producto h3,
+.accesorio__producto h3,
+.ofertas__producto h3 {
+    margin-top: 0;
+    color: #e0ac08;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Elemento: p dentro de cada producto */
+.productos__producto p,
+.accesorio__producto p,
+.ofertas__producto p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+/* Elemento: .precio dentro de cada producto */
+.precio {
+    color: #e0ac08;
     font-weight: bold;
-    margin: 0.2rem;
+    margin-bottom: 1rem;
 }
 
-header .logo {
-    width: 50px; /* Ajusta el tamaño del logo */
-    height: auto; /* Mantén la proporción del logo */
+/* Elemento: button dentro de cada producto */
+.productos__producto button,
+.accesorio__producto button,
+.ofertas__producto button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #212121;
+    color: #f5c518;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+/* Links en el footer */
+footer a {
+    color: #f5c518;
+    text-decoration: none;
+    margin: 0 5px;
+}
+footer a:hover {
+    color: #e0ac08;
 }
